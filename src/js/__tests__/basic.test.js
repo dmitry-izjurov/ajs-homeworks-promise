@@ -1,7 +1,7 @@
-import sum from '../basic';
+import GameSavingLoader from '../GameSavingLoader';
 
-test('should sum', () => {
-  const result = sum([1, 2, 3]);
-
-  expect(result).toBe(6);
+test('Объект должен создаваться', () => {
+  GameSavingLoader.load().then((saving) => {
+    expect(saving).toBe('{"id":9,"created":1546300800,"userInfo":{"id":1,name":"Hitman","level":10,"points":2000}}');
+  }, (error) => error);
 });
